@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .main-nav-li {
+      @apply p-2.5;
+    }
+
+    /* .herobg{
+        @apply absolute left-0 top-0 z-[-1] w-[100%] 
+    } */
+  }
+  
+
