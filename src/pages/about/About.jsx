@@ -14,9 +14,9 @@ const About = () => {
           extraClass={"text-[19px] md:text-[40px] leading-[30px] mb-3"}
         />
         <p className="md:text-xl">
-          Explore the heart of our celebration: 'About the Birthday Celebrant.
+          Explore the heart of our celebration: 'About the Birthday Celebrant'.
           Welcome to the spotlight where we shine a light on the
-          remarkable individual we're celebrating today. Dive into the life and passions of Chukwumeka, discovering what makes
+          remarkable individual we're celebrating today. Dive into the life and passions of Chukwuemeka, discovering what makes
           him extraordinary. Join us in honoring and celebrating the joy and
           inspiration he brings to our lives.
         </p>
@@ -138,8 +138,8 @@ const About = () => {
 
       <p className="md:text-xl text-justify my-10">
         As we celebrate Chukwuemeka's special day, let's reflect on the joy
-        and inspiration they bring to our lives. Join us in honoring their
-        unique journey and celebrating the wonderful person they are.
+        and inspiration he brings to our lives. Join us in honoring his
+        unique journey and celebrating the wonderful person he is.
       </p>
     </div>
         </Container>

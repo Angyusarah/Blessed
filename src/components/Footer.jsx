@@ -23,14 +23,14 @@ const Footer = () => {
         </div>
 
         <div className="rounded-t-[70px] border-r-0 border-b-0 flex flex-col border-solid border-2 border-buttonblue
-                         md:rounded-tr-none md:justify-around md:gap-10 
-                         md:basis-3/5 lg:justify-between lg:pt-10 lg:items-center">
+                         md:rounded-tr-none md:justify-around md:gap-10 md:px-[30px]
+                         md:basis-3/5 lg:justify-between lg:pt-10 lg:items-center lg:px-0">
           <div className=" flex gap-8 justify-between items-center m-5 md:m-0 lg:gap-[100px]">
             <div className="text-left">
               <h3 className="font-semibold text-sm mt-5 mb-2 text-buttonblue lg:text-xl">
                 CONTACT
               </h3>
-              <p className="text-xs md:text-[17px] lg:text-base">+234 91 3223 4570</p>
+              <p className="text-xs md:text-[14px] lg:text-base">+234 91 3223 4570</p>
               <p className="text-xs md:text-[17px lg:text-base
               ]">angyusarah1@gmail.com</p>
             </div>

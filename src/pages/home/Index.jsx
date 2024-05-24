@@ -5,7 +5,6 @@ import Meetstar from "./Meetstar";
 import ImageSlider from "./ImageSlider";
 import LovedOnes from "./LovedOnes";
 import Countdown from "./Countdown";
-import Slides from "./Slides";
 
 function Index() {
   return (
@@ -17,7 +16,7 @@ function Index() {
       <ImageSlider />
       <Countdown/>
       <LovedOnes/> 
-      <Slides/>
+
       
       </Container>
       

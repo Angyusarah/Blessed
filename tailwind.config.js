@@ -9,7 +9,8 @@ export default {
       colors: {
         primary: "#1E1E1E",
         transwhite: "rgba(255, 255, 255, 0.7)",
-        buttonblue: "#4169E1"
+        buttonblue: "#4169E1",
+        lightblue: "#A8BAF1"
     },
     fontFamily: {
       'inter': ['Inter', 'sans-serif'],
