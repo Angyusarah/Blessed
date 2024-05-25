@@ -56,8 +56,8 @@ function Friends() {
         </button>
 
         {data &&
-          postsPerPage.map((data) => (
-            <div className=" flex-col text-center shadow-lg border-[3px] w-[80%] md:w-[60%] border-lightblue rounded-[30px] px-5 md:px-10 lg:px-20 mb-5 flex  items-center justify-center  my-10 md:text-[20px] py-5 ">
+          postsPerPage.map((data, index) => (
+            <div key={index} className=" flex-col text-center shadow-lg border-[3px] w-[80%] md:w-[60%] border-lightblue rounded-[30px] px-5 md:px-10 lg:px-20 mb-5 flex  items-center justify-center  my-10 md:text-[20px] py-5 ">
               <div className="w-[60px] md:w-20 h-[60px] md:h-20 border-2 border-buttonblue rounded-full">
                 <img
                   className="w-full h-full rounded-full"
