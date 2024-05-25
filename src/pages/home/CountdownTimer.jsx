@@ -53,23 +53,23 @@ const CountdownTimer = ({ targetDate, mainTextSize, subTextSize }) => {
         className=" text-center flex gap-5 text-buttonblue rounded-full w-full absolute left-8 top-[40%]"
       >
         <div>
-          <p className="font-bold text-5xl">{timeLeft.days} :</p>
-          <p>DAYS</p>
+          <p className="font-bold text-[2.7rem]">{timeLeft.days} :</p>
+          <p className=" text-xs">DAYS</p>
         </div>
 
         <div>
-          <p className="font-bold text-5xl">{timeLeft.hours} :</p>
-          <p>HOURS</p>
+          <p className="font-bold text-[2.7rem]">{timeLeft.hours} :</p>
+          <p className=" text-xs">HOURS</p>
         </div>
 
         <div>
-          <p className="font-bold text-5xl">{timeLeft.minutes} :</p>
-          <p>MINUTES</p>
+          <p className="font-bold text-[2.7rem]">{timeLeft.minutes} :</p>
+          <p className=" text-xs">MINUTES</p>
         </div>
 
         <div>
-          <p className="font-bold text-5xl">{timeLeft.seconds}</p>
-          <p>SECONDS</p>
+          <p className="font-bold text-[2.7rem]">{timeLeft.seconds}</p>
+          <p className=" text-xs">SECONDS</p>
         </div>
       </div>
     </div>

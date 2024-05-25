@@ -1,76 +1,77 @@
 import data from "./FriendsData";
+import { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
-const Friends = () => {
-  const rotateArrayRight = (arr) => {
-    if (arr.length === 0) return arr;
-    const lastElement = arr.pop();
-    return [lastElement, ...arr];
+function Friends() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPosts = data.length;
+
+  const pageSize = 1;
+  const pages = Math.floor(totalPosts / pageSize);
+
+  const goToPrev = () => {
+    const prevPage = Math.max(currentPage - 1, 1)
+    if (prevPage <= 1 ){
+        setCurrentPage(pages)
+    } else {
+        setCurrentPage(prevPage);
+    }
   };
 
-  const rotateArrayLeft = (arr) => {
-    if (arr.length === 0) return arr;
-    const firstElement = arr.shift();
-    return [...arr, firstElement];
+  const goToNext = () => {
+    const nextPage = Math.min(currentPage + 1, pages);
+    if (nextPage >= pages ){
+        setCurrentPage(1)
+    } else {
+        setCurrentPage(nextPage);
+    }
   };
 
-  const Cards = (props) => {
-    return (
-      <div className="flex gap-5 my-5 justify-center items-center">
-        <div>
-          <div className="w-[60px] md:w-20 h-[60px] md:h-20 border-2 border-buttonblue rounded-full">
-            <img
-              className="w-full h-full rounded-full"
-              src={`../src/assets/${props.item.coverImg}`}
-              alt=""
-            />
-          </div>
-        </div>
-        <div>
-          <h2 className=" font-semibold text-xl">{props.item.title}</h2>
-          <p className="my-1 md:my-3 text-base md:text-xl">
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
-            eligendi dolorem facere illum animi consectetur architecto
-            laudantium unde esse explicabo!"
-          </p>
-          <p className="text-xs md:text-base">May 20, 2024 at 1:00am</p>
-        </div>
-      </div>
-    );
-  };
+  const start = pageSize * (currentPage - 1);
+  const end = pageSize * currentPage;
+  const postsPerPage = data.slice(start, end);
 
-  const PaginationItems = () => {
-    const [currentItemIndex, setCurrentItemIndex] = useState(
-      Math.floor(Data.length / 2)
-    );
-    const [dataToDisplay, setDataToDisplay] = useState(
-      moveToCenter(Data, currentItemIndex)
-    );
+  const canGoPrev = currentPage > 1;
+  const canGoNext = currentPage < pages;
 
-  const cards = data.map((item) => {
-    return <Cards key={item.id} item={item} />;
-  });
   return (
-    <div className="flex justify-between">
-      <button
-        onClick={() => handlePrev(dataToDisplay, currentItemIndex)}
-        className=" text-5xl md:text-[70px] text-lightblue"
-      >
-        <FaAngleLeft />
-      </button>
-      <section className="">{cards}</section>
-      <div className=" shadow-lg border-[3px] w-[80%] md:w-[60%] border-lightblue rounded-[30px] px-5 md:px-20 mb-5 flex  items-center justify-center  my-10 md:text-[20px] py-10">
-              <p>{dataToDisplay[currentItemIndex].description}</p>
-             
+    <div>
+      <div className="flex justify-between lg:px-20">
+        <button
+          disabled={!canGoPrev}
+          onClick={goToPrev}
+          className=" text-5xl md:text-[70px] text-lightblue"
+        >
+          <FaAngleLeft />
+        </button>
+
+        {data &&
+          postsPerPage.map((data) => (
+            <div className=" flex-col text-center shadow-lg border-[3px] w-[80%] md:w-[60%] border-lightblue rounded-[30px] px-5 md:px-10 lg:px-20 mb-5 flex  items-center justify-center  my-10 md:text-[20px] py-5 ">
+              <div className="w-[60px] md:w-20 h-[60px] md:h-20 border-2 border-buttonblue rounded-full">
+                <img
+                  className="w-full h-full rounded-full"
+                  src={`../src/assets/${data.coverImg}`}
+                  alt=""
+                />
+              </div>
+              <h2 className=" font-semibold text-xl">{data.title}</h2>
+              <p className="my-1 md:my-3 text-base md:text-xl">
+                {data.description}
+              </p>
             </div>
-      <button
-        onClick={() => handleNext(dataToDisplay, currentItemIndex)}
-        className="text-5xl md:text-[70px] text-lightblue"
-      >
-        <FaAngleRight />
-      </button>
+          ))}
+
+        <button
+          disabled={!canGoNext}
+          onClick={goToNext}
+          className="text-5xl md:text-[70px] text-lightblue"
+        >
+          <FaAngleRight />
+        </button>
+      </div>
     </div>
   );
-};
+}
 
 export default Friends;

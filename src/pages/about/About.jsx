@@ -1,6 +1,7 @@
 import Heading from "../../components/Heading";
-import Wishes1 from "../../assets/wishes1.png";
-import Wishes2 from "../../assets/wishes2.png";
+import b4 from "../../assets/images/b4.jpg"
+import b3 from "../../assets/images/b3.jpg"
+import b36 from "../../assets/images/b36.jpg"
 import Container from "../../components/Container";
 
 const About = () => {
@@ -54,7 +55,7 @@ const About = () => {
           </div>
 
           <div className=" md:flex md:justify-center md:items-center md:basis-1/2 ">
-            <img src={Wishes1} className="w-[100%] h-[70%] " alt="" />
+            <img src={b4} className="w-[100%] h-[70%] " alt="" />
           </div>
         </div>
 
@@ -97,7 +98,7 @@ const About = () => {
 
           </div>
           <div className=" md:flex md:justify-center md:items-center md:basis-1/2 order-[-1]">
-            <img src={Wishes2} className="w-[100%] h-[70%]" alt="" />
+            <img src={b36} className="w-[100%] h-[70%]" alt="" />
           </div>
         </div>
 
@@ -131,7 +132,7 @@ const About = () => {
           </div>
 
           <div className=" md:flex md:justify-center md:items-center md:basis-1/2 ">
-            <img src={Wishes1} className="w-[100%] h-[70%] " alt="" />
+            <img src={b3} className="w-[100%] h-[70%] " alt="" />
           </div>
         </div>
       </div>

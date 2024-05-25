@@ -3,38 +3,33 @@ import Wishes2 from "../../assets/wishes2.png";
 import Button from "../../components/Button";
 import Thankyou from "../../assets/thankyou.png";
 import { FaXmark } from "react-icons/fa6";
-import Modal from "../../components/Modal";
-import { useContext, useState } from "react";
-import { MailContext } from "../../contexts/Mail";
 import { sendMail } from "../../helper/data";
-
+import { useState } from "react";
 const Form = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState('')
-  const [content, setContent] = useState('')
+  const [fullName, setFullName] = useState('')
+  const [wish, setWish] = useState('')
   const [showModal, setShowModal] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || content === "") {
+    if (fullName === "" || wish === "") {
       setError(true);
       return;
     } else {
       setLoading(true);
       setError(false);
-      console.log(name, content);
-      // call api for payment and posting
-      sendMail(name, content)
+      console.log(fullName, wish);
+    
+      sendMail(fullName, wish)
         .then((res) => {
           console.log(res);
-          if (res.status === 200) {
-            setName("");
-            setContent("");
+          if (res.status === 201) {
+            setFullName("");
+            setWish("");
             setLoading(false);
             setShowModal(true)
-
-            // alert("Message sent successfully");
           } else {
             console.log(error);
             setLoading(false);
@@ -45,6 +40,10 @@ const Form = () => {
         });
     }
   };
+
+  const closeModal = () => {
+    setShowModal(false)
+  }
 
   return (
     <div>
@@ -63,7 +62,7 @@ const Form = () => {
             <p className="text-[17px]">Leave your heartfelt wishes below.</p>
           </div>
 
-          <div className=" bg-white p-5 rounded-2xl border-[1px] border-buttonblue flex flex-col">
+          <div className="relative bg-white p-5 rounded-2xl border-[1px] border-buttonblue flex flex-col">
             <form action=""
             className="w-full">
               <div>
@@ -76,8 +75,8 @@ const Form = () => {
                   type="text"
                   name=""
                   id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   placeholder="Name*"
                   className="focus:border-buttonblue rounded-lg border-[1px] focus:outline-none p-4 md:py-6 h-[2.25rem] lg:h-[3.6rem] w-full  mt-3"
                 />
@@ -96,8 +95,8 @@ const Form = () => {
                   type="text"
                   name=""
                   id="message"
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
+                  value={wish}
+                  onChange={(e) => setWish(e.target.value)}
                   placeholder="Write your wishes..."
                   className=" w-full p-4 border-[1px] rounded-lg focus:border-buttonblue focus:outline-none focus:ring-0 h-[8rem] lg:h-[10rem] mt-3"
                 />
@@ -122,18 +121,10 @@ const Form = () => {
                 Share Your Love
               </Button>
             </div>
-          </div>
-        </div>
-        <img
-          src={Wishes2}
-          className=" w-[200px] h-[150px] self-start mb-5 lg:h-[250px] lg:w-[300px]"
-          alt=""
-        />
-      </div>
 
-     {showModal && <div className="flex justify-center items-center  my-10">
-        <div className=" relative flex flex-col justify-center items-center text-center w-[70%] md:w-[35%] bg-lightblue rounded-3xl py-5 px-5 md:px-10">
-          <button className=" bg-buttonblue absolute top-3 right-3 text-white h-8 md:h-10 w-8 md:w-10 flex justify-center items-center text-2xl rounded-full ">
+            {showModal && <div className="flex justify-center items-center">
+        <div className=" absolute top-20 flex flex-col justify-center items-center text-center w-[90%] lg:w-[60%] bg-lightblue rounded-3xl py-5 px-5 md:px-6">
+          <button onClick={closeModal} className=" bg-buttonblue absolute top-3 right-3 text-white h-8 md:h-10 w-8 md:w-10 flex justify-center items-center text-2xl rounded-full ">
             <FaXmark />
           </button>
           <img src={Thankyou} alt="" />
@@ -144,6 +135,16 @@ const Form = () => {
           </p>
         </div>
       </div>}
+          </div>
+        </div>
+        <img
+          src={Wishes2}
+          className=" w-[200px] h-[150px] self-start mb-5 lg:h-[250px] lg:w-[300px]"
+          alt=""
+        />
+      </div>
+
+    
     </div>
   );
 };

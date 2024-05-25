@@ -2,29 +2,14 @@ import axios from "axios";
 
 const url = "https://birthday-site-8fo8.onrender.com"
 
-export const getOrder = async () => {
-    try {
-        const res = await axios.get(
-            `${url}/user/all-orders`,
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            }
-        );
-        return res;
-    } catch (error) {
-        error;
-    }
-};
 
-export const sendMail = async (name, content) => {
+export const sendMail = async (fullName, wish) => {
     try {
         const res = await axios.post(
             `${url}/api/v1/wish/create`,
             JSON.stringify({
-                fullNmae: name,
-                wish: content,
+                fullName,
+                wish
             }),
             {
                 headers: {
@@ -41,7 +26,7 @@ export const sendMail = async (name, content) => {
 export const getWish = async () => {
     try {
         const res = await axios.get(
-            `${url}/contact/all`,
+            `${url}/api/v1/wish`,
             {
                 headers: {
                     "Content-Type": "application/json",

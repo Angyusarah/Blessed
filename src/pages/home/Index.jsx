@@ -13,7 +13,6 @@ function Index() {
       <Hero/>
       <Meetstar/>
       <ImageSlider/>
-      <ImageSlider />
       <Countdown/>
       <LovedOnes/> 
 

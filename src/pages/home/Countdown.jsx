@@ -4,7 +4,7 @@ import CountdownTimer from "./CountdownTimer"
 
 
 const Countdown = () => {
-  const launchDate = new Date("2024-05-25T12:00:00");
+  const launchDate = new Date("2024-05-26T00:00:00");
 
   return (
     <div className="mt-[60px] md:my-[60px] flex flex-col justify-center items-center text-center px-6 md:px-[100px]">
