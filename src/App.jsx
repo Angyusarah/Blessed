@@ -1,26 +1,25 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from "./pages/home/Index"
-import Wishes from "./pages/wishes/Wishes"
-import Gallery from "./pages/gallery/Gallery"
-import About from "./pages/about/About"
-import "./App.css"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/home/Index";
+import Wishes from "./pages/wishes/Wishes";
+import Gallery from "./pages/gallery/Gallery";
+import About from "./pages/about/About";
+import "./App.css";
+import AdminLayout from "./pages/dashboard/layout";
+import Dashboard from "./pages/dashboard/Dasboard";
 
-
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/about", element: <About /> },
+  { path: "/wishes", element: <Wishes /> },
+  { path: "/gallery", element: <Gallery /> },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [{ index: true, element: <Dashboard /> }],
+  },
+]);
 function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/wishes" element={<Wishes />} />
-          <Route path="/gallery" element={<Gallery />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
-
