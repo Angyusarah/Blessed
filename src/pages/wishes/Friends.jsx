@@ -61,7 +61,7 @@ function Friends() {
               <div className="w-[60px] md:w-20 h-[60px] md:h-20 border-2 border-buttonblue rounded-full">
                 <img
                   className="w-full h-full rounded-full"
-                  src={`../src/assets/${data.coverImg}`}
+                  src={`../public/assets/${data.coverImg}`}
                   alt=""
                 />
               </div>

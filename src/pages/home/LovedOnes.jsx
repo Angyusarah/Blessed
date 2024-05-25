@@ -34,7 +34,8 @@ const LovedOnes = () => {
           <div>
             <div
               key={index}
-              className={`h-[50px] w-[50px] md:w-[60px] md:h-[60px] md:mx-2 border-[3px] border-lightblue rounded-full overflow-hidden 
+              className={`h-[50px] w-[50px] md:w-[60px] md:h-[60px] 
+              md:mx-2 border-[3px] border-lightblue rounded-full overflow-hidden 
           cursor-pointer transition-transform duration-300
           ${
             index === Math.floor(data.length / 2)
@@ -44,8 +45,8 @@ const LovedOnes = () => {
               onClick={() => onPageChange(index)}
             >
               <img
-                src={`../dist/assets/${item.coverImg}`}
-                alt={`Page ${index + 1}`}
+                src={`../../assets/${item.coverImg}`}
+                alt={`${item.title}`}
                 className=" w-full h-full object-cover"
               />
             </div>

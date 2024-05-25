@@ -13,7 +13,7 @@ import data from "./FriendsData";
           <div className="w-[60px] md:w-20 h-[60px] md:h-20 border-2 border-buttonblue rounded-full">
             <img
               className="w-full h-full rounded-full"
-              src={`../src/assets/${props.item.coverImg}`}
+              src={`../public/assets/${props.item.coverImg}`}
               alt=""
             />
           </div>

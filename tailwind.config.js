@@ -16,7 +16,7 @@ export default {
     },
 
       backgroundImage: {
-        "main-bg": "url('/src/assets/background.png')",
+        "main-bg": "url('/public/assets/background.png')",
       },
     },
     plugins: [],

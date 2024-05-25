@@ -50,7 +50,7 @@ function Friends() {
             <div className="  shadow-lg border-[3px] w-[80%] md:w-[60%] border-lightblue rounded-[30px] mb-5 flex  items-center justify-center  my-10 md:text-[20px]  ">
               <img
                   className="w-[100%] h-full"
-                  src={`../src/assets/${data.coverImg}`}
+                  src={`../public/assets/${data.coverImg}`}
                   alt=""
                 />
             </div>
