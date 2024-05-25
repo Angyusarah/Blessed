@@ -43,28 +43,28 @@ const ImageSlider = () => {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-          <h3 className="bg-red-500 p-[150px] m-10">1</h3>
+          <h3 className="bg-red-500 p-[100px] m-10">1</h3>
         </div>
         <div>
-          <h3 className="bg-red-500 p-[150px] m-10">2</h3>
+          <h3 className="bg-red-500 p-[100px] m-10">2</h3>
         </div>
         <div>
-          <h3 className="bg-red-500 p-[150px] m-10">3</h3>
+          <h3 className="bg-red-500 p-[100px] m-10">3</h3>
         </div>
         <div>
-          <h3 className="bg-red-500 p-[150px] m-10">4</h3>
+          <h3 className="bg-red-500 p-[100px] m-10">4</h3>
         </div>
         <div>
-          <h3 className="bg-red-500 p-[150px] m-10">5</h3>
+          <h3 className="bg-red-500 p-[100px] m-10">5</h3>
         </div>
         <div>
-          <h3 className="bg-red-500 p-[150px] m-10">6</h3>
+          <h3 className="bg-red-500 p-[100px] m-10">6</h3>
         </div>
         <div>
-          <h3 className="bg-red-500 p-[150px] m-10">7</h3>
+          <h3 className="bg-red-500 p-[100px] m-10">7</h3>
         </div>
         <div>
-          <h3 className="bg-red-500 p-[150px] m-10">8</h3>
+          <h3 className="bg-red-500 p-[100px] m-10">8</h3>
         </div>
       </Slider>
     </div>
