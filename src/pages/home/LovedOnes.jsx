@@ -45,7 +45,7 @@ const LovedOnes = () => {
             >
               <img
                 src={`../../assets/${item.coverImg}`}
-                alt={`Page ${index + 1}`}
+                alt={`${item.title}`}
                 className=" w-full h-full object-cover"
               />
             </div>
