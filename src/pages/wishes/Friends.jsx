@@ -2,6 +2,7 @@ import data from "./FriendsData";
 import Heading from "../../components/Heading";
 import { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import smiley from "../../assets/smiley.jpg"
 
 function Friends() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,7 +61,7 @@ function Friends() {
               <div className="w-[60px] md:w-20 h-[60px] md:h-20 border-2 border-buttonblue rounded-full">
                 <img
                   className="w-full h-full rounded-full"
-                  src={`../../assets/${data.coverImg}`}
+                  src={smiley}
                   alt=""
                 />
               </div>
