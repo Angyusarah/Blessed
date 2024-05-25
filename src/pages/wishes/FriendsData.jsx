@@ -2,7 +2,7 @@ const FriendsData = [
     {
         id: 1,
         title: "Smiley",
-        description: "Happy birthday B, thank you for being the most amazing person ever. Thank you for being my favorite person in the whole wide world lol. For never wanting to see me sad or stressed or inconvenienced, thank you. I pray this new year comes with every good thing you expect of it and more. Cheers to an amazing new year. Sending you lotsss of love, hugs and good wishes. Xoxo🎉🥂❤",
+        description: "Happy birthday  B, thank you for being the most amazing person ever. Thank you for being my favorite person in the whole wide world lol. For never wanting to see me sad or stressed or inconvenienced, thank you. I pray this new year comes with every good thing you expect of it and more. Cheers to an amazing new year. Sending you lotsss of love, hugs and good wishes. Xoxo🎉🥂❤",
         coverImg: "smiley.jpg",
     },
     {
@@ -82,6 +82,12 @@ const FriendsData = [
         title: "Tayo",
         description: "Dear Blessed, Thank you for being an amazing person. You are one of the few individuals with great heart and personality. In this new year, I wish you the wisdom and grace to navigate your life’s journey. I see greatness in you, keep being yourself.",
         coverImg: "tayo.jpg",
+    },
+    {
+        id: 15,
+        title: "_Lush",
+        description: "Hey Odogwu Femi, you’re one of the kindest people I’ve ever known and it’s amazing how loyal you are to your friends. You’re a very nice person and I pray that your dreams will come true. Happy birthday to you!",
+        coverImg: "lush.jpg",
     },
     {
         id: 15,

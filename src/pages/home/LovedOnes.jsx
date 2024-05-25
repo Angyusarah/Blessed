@@ -44,7 +44,7 @@ const LovedOnes = () => {
               onClick={() => onPageChange(index)}
             >
               <img
-                src={`../../assets/${item.coverImg}`}
+                src={`../src/assets/${item.coverImg}`}
                 alt={`Page ${index + 1}`}
                 className=" w-full h-full object-cover"
               />
