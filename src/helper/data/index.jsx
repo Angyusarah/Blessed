@@ -39,22 +39,21 @@ export const getWish = async () => {
     }
 };
 
-
 export const updateMailStatus = async (id) => {
-    try {
-        const res = await axios.patch(
-            `${url}/contact/update-status/${id}`,
-            JSON.stringify({
-                Status: "read",
-            }),
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            }
-        );
-        return res;
-    } catch (error) {
-        return error;
-    }
+  try {
+    const res = await axios.patch(
+      `${url}/contact/update-status/${id}`,
+      JSON.stringify({
+        Status: "read",
+      }),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return res;
+  } catch (error) {
+    return error;
+  }
 };

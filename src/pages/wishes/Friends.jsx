@@ -1,4 +1,5 @@
 import data from "./FriendsData";
+import Heading from "../../components/Heading";
 import { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
@@ -36,6 +37,14 @@ function Friends() {
 
   return (
     <div>
+       <Heading
+        heading="Words from Friends"
+        extraClass={"text-[20px] leading-[30px] mb-3 text-center"}
+      />
+
+      <p className="text-center text-xl px-6">
+        Explore to see wishes from some of Chukwuemeka's closest friends
+      </p>
       <div className="flex justify-between lg:px-20">
         <button
           disabled={!canGoPrev}

@@ -12,7 +12,7 @@ const Echoes = () => {
         />
 
         <p className=" text-xl"> Explore Heartwarming Messages: Scroll tgrough the heartfelt wishes from friends and loved ones, celebrating Chukwuemeka's special day with love and Joy.</p>
-        <div className="">
+        <div className="my-10">
         <Posts/>
         </div>
     </div>
