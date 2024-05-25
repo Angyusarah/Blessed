@@ -17,7 +17,7 @@ const Lovedonesdata = [
         id: 3,
         title: "Colette",
         description: "To My Parent's first Son; Its your Brithday and I want you to know that you are very much appreciated and Loved for all you do, thank you for going the extra miles when called upon,thank you for how you love your family, and being very kind hearted with those around you. I pray for you this day,that goodness will forever follow you, favour will be at your beck and call,long life and prosperity is already your portion. Enjoy your day brotherly.",
-        coverImg: "colette.png",
+        coverImg: "colette-2.jpg",
         rating: 5.0,
     },
     {

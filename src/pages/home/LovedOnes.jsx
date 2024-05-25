@@ -2,6 +2,7 @@ import Heading from "../../components/Heading";
 import { useState, useEffect } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import Data from "./LovedonesData";
+import colette from "../../assets/colette.png"
 
 const LovedOnes = () => {
   const moveToCenter = (arr, selectedIndex) => {
@@ -31,24 +32,30 @@ const LovedOnes = () => {
     return (
       <div className="flex items-center justify-center my-5 ">
         {data.map((item, index) => (
-          <div>
+          <div key={index}>
             <div
-              key={index}
               className={`h-[50px] w-[50px] md:w-[60px] md:h-[60px] 
               md:mx-2 border-[3px] border-lightblue rounded-full overflow-hidden 
           cursor-pointer transition-transform duration-300
-          ${
-            index === Math.floor(data.length / 2)
-              ? "md:border-[5px] transform scale-150"
-              : "border-transparent"
-          }`}
+          ${index === Math.floor(data.length / 2)
+                  ? "md:border-[5px] transform scale-150"
+                  : "border-transparent"
+                }`}
               onClick={() => onPageChange(index)}
             >
-              <img
-                src={`../../assets/${item.coverImg}`}
-                alt={`${item.title}`}
-                className=" w-full h-full object-cover"
-              />
+              {
+                item.id === 3 ?
+                  <img
+                    src={`${colette}`}
+                    alt={"colette"}
+                    className=" w-full h-full object-cover"
+                  /> :
+                  <img
+                    src={`../../assets/${item.coverImg}`}
+                    alt={`${item.title}`}
+                    className=" w-full h-full object-cover"
+                  />
+              }
             </div>
           </div>
         ))}
@@ -93,7 +100,7 @@ const LovedOnes = () => {
             </button>
             <div className=" shadow-lg border-[3px] w-[80%] md:w-[60%] border-lightblue rounded-[30px] px-5 md:px-20 mb-5 flex  items-center justify-center  my-10 md:text-[20px] py-10">
               <p>{dataToDisplay[currentItemIndex].description}</p>
-             
+
             </div>
             <button
               onClick={() => handleNext(dataToDisplay, currentItemIndex)}
@@ -102,11 +109,11 @@ const LovedOnes = () => {
               <FaAngleRight />
             </button>
           </div>
-         <div className=" flex flex-col justify-center items-center">
-         <div className=" border-2 border-lightblue my-[2px] md:my-1 w-[30px] md:w-[40px] h-[30px] md:h-[40px] rounded-[20px]"></div>
-          <div className=" border-2 border-lightblue my-[2px] md:my-1 w-[20px] h-[20px] rounded-[10px]"></div>
-          <div className=" border-2 border-lightblue my-[2px] md:my-1 w-[10px]  h-[10px] rounded-[5px]"></div>
-         </div>
+          <div className=" flex flex-col justify-center items-center">
+            <div className=" border-2 border-lightblue my-[2px] md:my-1 w-[30px] md:w-[40px] h-[30px] md:h-[40px] rounded-[20px]"></div>
+            <div className=" border-2 border-lightblue my-[2px] md:my-1 w-[20px] h-[20px] rounded-[10px]"></div>
+            <div className=" border-2 border-lightblue my-[2px] md:my-1 w-[10px]  h-[10px] rounded-[5px]"></div>
+          </div>
           <Pagination data={dataToDisplay} onPageChange={handlePageChange} />
           <p className=" font-semibold text-xl md:text-2xl tracking-wide"> {dataToDisplay[currentItemIndex].title}</p>
         </div>

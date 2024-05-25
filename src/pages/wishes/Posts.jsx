@@ -62,9 +62,9 @@ const Posts = () => {
     })} */}
 
 {displayWish && postsPerPage.map((item, i) => (
-                <div className="flex  flex-col gap-5 justify-center items-start border-y-2 shadow-sm p-5" key={i}>
+                <div className="flex  flex-col gap-1 justify-center items-start border-y-2 shadow-sm p-5" key={i}>
                 <h2 className=" font-semibold text-xl">{item.fullName}</h2>
-                <p className="my-1 md:my-3 text-base md:text-xl">
+                <p className="text-base md:text-xl">
                 {item.wish}
                 </p>
                
